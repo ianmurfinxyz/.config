@@ -3,6 +3,9 @@
 -- author: Ian Murfin - github.com/ianmurfinxyz
 --------------------------------------------------------------------------------
 
+-- set paths which controls where lua searches for packages in 'require'
+-- calls. Allows us to use paths relative to the config root rather than
+-- relative paths.
 local cfg = '/home/merlin/.config/nvim/'
 package.path = string.format(
 	"?;?.lua;%s/?.lua;%s/lua/?.lua;%s/lua/merlin/?.lua;%s/lua/util/?.lua;",
@@ -11,3 +14,5 @@ package.path = string.format(
 
 require("merlin.options")
 require("merlin.mappings")
+require("merlin.plugins")
+require("merlin.theme")

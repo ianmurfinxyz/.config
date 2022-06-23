@@ -188,8 +188,101 @@
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
-# Colors (Tomorrow Night)
-#colors:
+################################################################################
+# Define color schemes. Mutliple color schemes can be defined here
+# and associated with 'anchors' (i.e. ids), and then the colorscheme
+# can be set in the colors: section by refering to the 'anchor'.
+# see: https://github.com/alacritty/alacritty/wiki/Color-schemes
+schemes:
+  # Tokyonight 'night' flavour theme
+  tokyonight_night: &tokyonight_night
+    primary:
+      background: '0x1a1b26'
+      foreground: '0xc0caf5'
+    normal:
+      black:   '0x15161E'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xbb9af7'
+      cyan:    '0x7dcfff'
+      white:   '0xa9b1d6'
+    bright:
+      black:   '0x414868'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xbb9af7'
+      cyan:    '0x7dcfff'
+      white:   '0xc0caf5'
+    indexed_colors:
+      - { index: 16, color: '0xff9e64' }
+      - { index: 17, color: '0xdb4b4b' }
+
+  tokyonight_storm: &tokyonight_storm
+    primary:
+      background: '0x24283b'
+      foreground: '0xc0caf5'
+    normal:
+      black:   '0x1D202F'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xbb9af7'
+      cyan:    '0x7dcfff'
+      white:   '0xa9b1d6'
+    bright:
+      black:   '0x414868'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xbb9af7'
+      cyan:    '0x7dcfff'
+      white:   '0xc0caf5'
+    indexed_colors:
+      - { index: 16, color: '0xff9e64' }
+      - { index: 17, color: '0xdb4b4b' }
+
+  tokyonight_day: &tokyonight_day
+    primary:
+      background: '0xe1e2e7'
+      foreground: '0x3760bf'
+    normal:
+      black:   '0xe9e9ed'
+      red:     '0xf52a65'
+      green:   '0x587539'
+      yellow:  '0x8c6c3e'
+      blue:    '0x2e7de9'
+      magenta: '0x9854f1'
+      cyan:    '0x007197'
+      white:   '0x6172b0'
+    bright:
+      black:   '0xa1a6c5'
+      red:     '0xf52a65'
+      green:   '0x587539'
+      yellow:  '0x8c6c3e'
+      blue:    '0x2e7de9'
+      magenta: '0x9854f1'
+      cyan:    '0x007197'
+      white:   '0x3760bf'
+    indexed_colors:
+      - { index: 16, color: '0xb15c00' }
+      - { index: 17, color: '0xc64343' }
+
+################################################################################
+
+# note: the *<shceme_name> syntax is an anchor. Use it to specify which
+# colorscheme to use. This allows setting up multiple color schemes in
+# the configuration file, rather than inlining a single one into this
+# colors section.
+
+colors: *tokyonight_night
+
+  # Default colors
   # Default colors
   #primary:
   #  background: '#1d1f21'
@@ -331,6 +424,8 @@
   # the default background. When set to `true` all cells will be transparent
   # regardless of their background color.
   #transparent_background_colors: false
+
+################################################################################
 
 # Bell
 #
