@@ -1,5 +1,5 @@
--- NEOVIM PLUGINS
 --------------------------------------------------------------------------------
+-- NEOVIM PLUGINS
 -- author - Ian Murfin - github.com/ianmurfinxyz
 --------------------------------------------------------------------------------
 
@@ -44,7 +44,9 @@ packer.init {
 	}
 }
 
--- Install your plugins here
+--------------------------------------------------------------------------------
+-- PLUGIN INSTALLATION
+--------------------------------------------------------------------------------
 return packer.startup(function(use)
 	
 	-- Have packer manage itself
@@ -56,8 +58,24 @@ return packer.startup(function(use)
 	-- Useful lua functions used by lots of plugins
 	use "nvim-lua/plenary.nvim" 
 
+	------------------------------------------------------------------------------
+	-- COMPLETETION ENGINE
+	------------------------------------------------------------------------------
+	
+	-- Core completion engine
+	use "hrsh7th/nvim-cmp"
+
+	-- Completion engine requires a snippets engine
+	use "L3MON4D3/LuaSnip"
+
+	------------------------------------------------------------------------------
+	-- COLOR SCHEMES
+	------------------------------------------------------------------------------
+
 	-- TokyoNight color scheme 
 	use 'folke/tokyonight.nvim'
+
+	------------------------------------------------------------------------------
 	
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
@@ -66,3 +84,7 @@ return packer.startup(function(use)
 	end
 	
 end)
+--------------------------------------------------------------------------------
+
+
+

@@ -7,7 +7,7 @@ local colorscheme = 'tokyonight'
 
 -- note: tokyonight options must be set before setting the colorscheme.
 
-vim.g.tokyonight_style = "storm"
+vim.g.tokyonight_style = "night"
 
 -- 'default' colorscheme will be used if the preferred colorscheme is
 -- not found.

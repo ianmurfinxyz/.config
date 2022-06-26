@@ -107,76 +107,61 @@
   # Scrolling distance multiplier.
   #multiplier: 3
 
-# Font configuration
-#font:
-  # Normal (roman) font face
-  #normal:
-    # Font family
-    #
-    # Default:
-    #   - (macOS) Menlo
-    #   - (Linux/BSD) monospace
-    #   - (Windows) Consolas
-    #family: monospace
+################################################################################
+# FONT CONFIGURATION
+################################################################################
 
-    # The `style` can be specified to pick a specific face.
-    #style: Regular
+# !!NERD FONTS!!
+#
+# To get good icons in a terminal go for NERD fonts:
+#   https://github.com/ryanoasis/nerd-fonts
+#
+# which are popular fonts patched to include thousands of icons. Pretty handy!
+#
+# To install a NERD font, just download the ttf/otf file you want and save 
+# it to,
+#   .local/share/fonts/
+# 
+# The linux font cache reads this dir for user specified fonts. Once you have
+# installed a font you need to update the font cache with the command,
+#   fc-cache -f -v
+#
+# To find the correct family name of a font to set in this config file run 
+# the command,
+#   fc-list : family
 
-  # Bold font face
-  #bold:
-    # Font family
-    #
-    # If the bold family is not specified, it will fall back to the
-    # value specified for the normal font.
-    #family: monospace
+font:
+  normal:
+    family: "Hurmit Nerd Font"
+    style: Regular
 
-    # The `style` can be specified to pick a specific face.
-    #style: Bold
+  bold:
+    family: "Hurmit Nerd Font"
+    style: Bold
 
-  # Italic font face
-  #italic:
-    # Font family
-    #
-    # If the italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    #family: monospace
+  italic:
+    family: "Hack Nerd Font"
+    style: Italic
 
-    # The `style` can be specified to pick a specific face.
-    #style: Italic
+  bold_italic:
+    family: "Hack Nerd Font"
+    style: Bold Italic
 
-  # Bold italic font face
-  #bold_italic:
-    # Font family
-    #
-    # If the bold italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    #family: monospace
-
-    # The `style` can be specified to pick a specific face.
-    #style: Bold Italic
-
-  # Point size
-  #size: 11.0
+  size: 12.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
   # spacing.
-  #offset:
-  #  x: 0
-  #  y: 0
+  offset:
+    x: 0
+    y: 2 
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the
   # right, increasing `y` moves the glyph upward.
-  #glyph_offset:
-  #  x: 0
-  #  y: 0
-
-  # Thin stroke font rendering (macOS only)
-  #
-  # Thin strokes are suitable for retina displays, but for non-retina screens
-  # it is recommended to set `use_thin_strokes` to `false`.
-  #use_thin_strokes: true
+  glyph_offset:
+    x: 0
+    y: 0
 
   # Use built-in font for box drawing characters.
   #
@@ -188,6 +173,8 @@
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
+################################################################################
+# COLOR THEME 
 ################################################################################
 # Define color schemes. Mutliple color schemes can be defined here
 # and associated with 'anchors' (i.e. ids), and then the colorscheme
@@ -273,14 +260,14 @@ schemes:
       - { index: 16, color: '0xb15c00' }
       - { index: 17, color: '0xc64343' }
 
-################################################################################
-
 # note: the *<shceme_name> syntax is an anchor. Use it to specify which
 # colorscheme to use. This allows setting up multiple color schemes in
 # the configuration file, rather than inlining a single one into this
 # colors section.
 
 colors: *tokyonight_night
+
+################################################################################
 
   # Default colors
   # Default colors

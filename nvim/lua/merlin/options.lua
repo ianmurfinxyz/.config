@@ -31,7 +31,7 @@ vim.opt.relativenumber = false
 -- whitespace rendering using 'list' mode
 vim.opt.list = true
 vim.opt.listchars='tab:-->,space:.,'
- 
+
 -- search options
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
