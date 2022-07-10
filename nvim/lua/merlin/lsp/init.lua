@@ -11,9 +11,16 @@ end
 
 -- Must call nvim-lsp-installer setup function before we setup any servers
 -- so that the installer can setup the server hooks.
-require('merlin.lsp.lsp-installer')
+require('merlin.lsp.server_installer')
 
-lspconfig.sumneko_lua.setup(require('merlin.lsp.settings.sumneko_lua'));
-lspconfig.clangd.setup(require('merlin.lsp.settings.clangd'));
+local opts = {
+	on_attach = require('merlin.lsp.handlers').on_attach
+}
+
+local sumneko_opts = vim.tbl_deep_extend('force', opts, require('merlin.lsp.settings.sumneko_lua'))
+lspconfig.sumneko_lua.setup(sumneko_opts);
+
+local clangd_opts = vim.tbl_deep_extend('force', opts, require('merlin.lsp.settings.clangd'))
+lspconfig.clangd.setup(clangd_opts);
 
 
