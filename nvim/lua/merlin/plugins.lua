@@ -48,43 +48,45 @@ packer.init {
 -- PLUGIN INSTALLATION
 --------------------------------------------------------------------------------
 return packer.startup(function(use)
-	
-	-- Have packer manage itself
-	use "wbthomason/packer.nvim" 
-	
-	-- An implementation of the Popup API from vim in Neovim
-	use "nvim-lua/popup.nvim" 
-	
-	-- Useful lua functions used by lots of plugins
-	use "nvim-lua/plenary.nvim" 
 
-	------------------------------------------------------------------------------
-	-- COMPLETETION ENGINE
-	------------------------------------------------------------------------------
-	
+	-- Have packer manage itself
+	use "wbthomason/packer.nvim"
+
+	-- An implementation of the Popup API from vim in Neovim
+	use "nvim-lua/popup.nvim"
+
+	-- Useful lua functions used by lots of plugins
+	use "nvim-lua/plenary.nvim"
+
 	-- Core completion engine
 	use "hrsh7th/nvim-cmp"
+	use 'hrsh7th/cmp-nvim-lsp' -- lsp source for completion engine.
+	use 'hrsh7th/cmp-buffer'
+	use 'hrsh7th/cmp-path'
+	use 'hrsh7th/cmp-cmdline'
+	use 'saadparwaiz1/cmp_luasnip'
 
 	-- Completion engine requires a snippets engine
-	use "L3MON4D3/LuaSnip"
+	use 'L3MON4D3/LuaSnip'
+	use 'rafamadriz/friendly-snippets'
 
-	------------------------------------------------------------------------------
-	-- COLOR SCHEMES
-	------------------------------------------------------------------------------
-
-	-- TokyoNight color scheme 
+	-- TokyoNight color scheme
 	use 'folke/tokyonight.nvim'
 
-	------------------------------------------------------------------------------
-	
+	-- LSP
+	-- Collection of community-driven language server configurations for
+	-- the language server client built into neovim. Not required to use
+	-- lsp in neovim but makes it easier. See help lspconfig. see help: lsp
+	use 'neovim/nvim-lspconfig'
+
+	-- Simple to use language server installer. Works with nvim-lspconfig.
+	use 'williamboman/nvim-lsp-installer'
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end
-	
+
 end)
 --------------------------------------------------------------------------------
-
-
-

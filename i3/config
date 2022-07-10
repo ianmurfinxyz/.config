@@ -6,13 +6,13 @@
 # Used for window titles
 # 
 # note: to get a list of fonts on the system, run:
-#   $ fc-list
+#		$ fc-list
 #
 # to get a sorted list of unique fonts by family run:
-#   $ fc-list : family | sort | uniq
+#		$ fc-list : family | sort | uniq
 #
 # font format should be:
-#   font pango:<family list> [<style options>] <size>
+#		font pango:<family list> [<style options>] <size>
 #
 # note: I installed this font myself, so copying this config to another
 # machine will cause a font resolution error to be dumped in the log; i3
@@ -73,11 +73,11 @@ bindsym $mod+o layout toggle split
 set $rdx 2
 set $rdy 2
 mode "resize" {
-  bindsym h resize shrink width $rdx px or $rdx ppt
-  bindsym j resize grow height $rdy px or $rdy ppt
-  bindsym k resize shrink height $rdy px or $rdy ppt
-  bindsym l resize grow width $rdx px or $rdx ppt
-  bindsym Escape mode "default"
+	bindsym h resize shrink width $rdx px or $rdx ppt
+	bindsym j resize grow height $rdy px or $rdy ppt
+	bindsym k resize shrink height $rdy px or $rdy ppt
+	bindsym l resize grow width $rdx px or $rdx ppt
+	bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
 
@@ -103,44 +103,40 @@ bindsym $mod+m mode "move"
 # WORKSPACES
 ################################################################################
 
-# support workspace names
+# support workspace names.
 set $ws1 "1:Discord"
 set $ws2 "2:Brave"
-set $ws3 "3:Git"
-set $ws4 "4:CodeOne"
-set $ws5 "5:CodeTwo"
+set $ws3 "3:0x03"
+set $ws4 "4:0x04"
+set $ws5 "5:0x05"
+set $ws6 "6:0x06"
+set $ws7 "7:0x07"
+set $ws8 "8:0x08"
+set $ws9 "9:0x09"
 
+# map workspaces to monitors.
 workspace $ws1 output HDMI-A-0
 workspace $ws2 output HDMI-A-0
-workspace $ws3 output HDMI-A-0
-workspace $ws4 output HDMI-A-0
-workspace $ws5 output HDMI-A-0
-
-# primary workspace names
-set $ws6 "6:Alpha"
-set $ws7 "7:Beta"
-set $ws8 "8:Gamma"
-set $ws9 "9:Delta"
-
+workspace $ws3 output DisplayPort-0
+workspace $ws4 output DisplayPort-0
+workspace $ws5 output DisplayPort-0
 workspace $ws6 output DisplayPort-0
 workspace $ws7 output DisplayPort-0
 workspace $ws8 output DisplayPort-0
 workspace $ws9 output DisplayPort-0
 
-# switch support workspaces
-bindsym $mod+shift+1 workspace $ws1
-bindsym $mod+shift+2 workspace $ws2
-bindsym $mod+shift+3 workspace $ws3
-bindsym $mod+shift+4 workspace $ws4
-bindsym $mod+shift+5 workspace $ws5
+# switch workspaces 
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
 
-# switch primary workspaces
-bindsym $mod+1 workspace $ws6
-bindsym $mod+2 workspace $ws7
-bindsym $mod+3 workspace $ws8
-bindsym $mod+4 workspace $ws9
-
-# move focused container to workspace
+# move focused container to workspace.
 bindsym $mod+Control+1 move container to workspace $ws1
 bindsym $mod+Control+2 move container to workspace $ws2
 bindsym $mod+Control+3 move container to workspace $ws3
@@ -150,27 +146,6 @@ bindsym $mod+Control+6 move container to workspace $ws6
 bindsym $mod+Control+7 move container to workspace $ws7
 bindsym $mod+Control+8 move container to workspace $ws8
 bindsym $mod+Control+9 move container to workspace $ws9
-
-# mode to move windows to primary workspaces
-mode "jump-primary" {
-  bindsym 1 move container to workspace $ws6
-  bindsym 2 move container to workspace $ws7
-  bindsym 3 move container to workspace $ws8
-  bindsym 4 move container to workspace $ws9
-	bindsym Escape mode "default"
-}
-bindsym $mod+Home mode "jump-primary"
-
-# mode to move windows to support workspaces
-mode "jump-support" {
-  bindsym 1 move container to workspace $ws1
-  bindsym 2 move container to workspace $ws2
-  bindsym 3 move container to workspace $ws3
-  bindsym 4 move container to workspace $ws4
-  bindsym 5 move container to workspace $ws5
-	bindsym Escape mode "default"
-}
-bindsym $mod+End mode "jump-support"
 
 ################################################################################
 # STYLING
@@ -191,33 +166,33 @@ hide_edge_borders none
 ################################################################################
 
 # primary highlight color
-set $COLHL0 #34eda6
+set $COLHL0 #9ece6a
 
 # secondary (dimmer) highlight color
-set $COLHL1 #3fa67e
+set $COLHL1 #4f6934
 
 # emphased/stressed gui elements
 set $STRESS #ff0055
 
 # shades
 set $BLACK0 #000000
-set $SHADE0 #333333
-set $SHADE1 #777777
-set $SHADE2 #bbbbbb
+set $SHADE0 #1f2335
+set $SHADE1 #454b66
+set $SHADE2 #9ca1b8
 set $WHITE0 #ffffff
 
 ################################################################################
 # WINDOW COLORS
 ################################################################################
 
-# class                 border  backgr. text    indicator child_border
-client.focused          $COLHL0 $COLHL0 $BLACK0 $STRESS   $COLHL0
-client.focused_inactive $SHADE1 $SHADE1 $BLACK0 $STRESS   $SHADE1
-client.unfocused        $SHADE1 $SHADE1 $BLACK0 $STRESS   $SHADE1
-client.urgent           #ff0000 #ff0000 $BLACK0 $STRESS   #ff0000
-client.placeholder      $BLACK0 $BLACK0 #ffffff $STRESS   $BLACK0
+# class									border	backgr. text		indicator child_border
+client.focused					$COLHL0 $COLHL0 $BLACK0 $STRESS		$COLHL0
+client.focused_inactive $SHADE1 $SHADE1 $BLACK0 $STRESS		$SHADE1
+client.unfocused				$SHADE1 $SHADE1 $BLACK0 $STRESS		$SHADE1
+client.urgent						#ff0000 #ff0000 $BLACK0 $STRESS		#ff0000
+client.placeholder			$BLACK0 $BLACK0 #ffffff $STRESS		$BLACK0
 
-client.background       #000000
+client.background				#000000
 
 ################################################################################
 # PROGRAM LAUNCHING
@@ -246,10 +221,8 @@ bindsym $mod+Shift+f exec thunar
 # start git client
 #bindsym $mod+Shift+k exec fork
 
-# start dmenu (a program launcher)
-#bindsym $mod+d exec --no-startup-id dmenu_run
-# A more modern dmenu replacement is rofi:
-bindsym $mod+d exec rofi -show drun
+# Program launcher
+bindsym $mod+Shift+BackSpace exec rofi -show run
 
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
@@ -263,10 +236,83 @@ bindsym $mod+d exec rofi -show drun
 assign [class="discord"] number $ws1
 
 ################################################################################
+# BAR
+################################################################################
+
+# TODO: install tray icons - am having problems getting nm-applet to work, seems
+# to fail to find the required icons event though they are installed in 
+#		/usr/share/icons
+
+#exec_always --no-startup-id "~/config/i3/tray.sh"
+# exec --no-startup-id nm-applet --sm-disable
+
+bar {
+	#status_command i3status -c ~/.config/i3status/config
+	#status_command i3status
+
+	## 
+	status_command bumblebee-status \
+		-m cpu sensors2 memory disk datetime \
+		-p root.path=/ time.format="%H:%M CW %V" date.format="%a, %b %d %Y" sensors2.showtemp="false" \
+		-t iceberg-rainbow
+
+	# bottom | top
+	position bottom
+
+	# font used for status line
+	#font pango:JetBrains Mono Bold 10
+	font pango:Hack Nerd Font 10
+
+	# separator for status line items
+	separator_symbol "|"
+
+	# the 'primary' option requires you to setup a primary display
+	# with the X server like:
+	#		$ xrandr --output <output> --primary
+	# else the tray icons will not appear.
+	tray_output primary
+
+	# show all workspaces on bar as clickable button
+	workspace_buttons yes
+
+	# remove numbers from the workspace names
+	strip_workspace_numbers no
+
+	# padding between upper, lower and right-hand side
+	# if tray and between icons
+	tray_padding 0
+
+	colors {
+		background $SHADE0
+
+		# default text color for status line
+		statusline $WHITE0
+
+		# color of separator between statusline modules
+		separator $SHADE1
+
+		#									 border  backgr. text
+		focused_workspace  $COLHL0 $COLHL0 $BLACK0
+		active_workspace	 $COLHL1 $COLHL1 $BLACK0
+		inactive_workspace $SHADE0 $SHADE0 $WHITE0
+		urgent_workspace	 $SHADE0 $SHADE0 $WHITE0
+	}
+}
+
+################################################################################
 # Startup Programs
 ################################################################################
 
-# ensure discord launches on boot
+# general systray applets
+exec_always --no-startup-id ~/.config/i3/tray_applets.sh
+
+# compositor
+exec_always --no-startup-id ~/.config/i3/compositor.sh
+
+# setup desktop backgrounds
+exec_always --no-startup-id ~/.fehbg
+
+# ensure discord launches on boot (also creates the systray icon)
 exec discord
 
 ################################################################################
@@ -286,64 +332,7 @@ bindsym $mod+$Alt+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut
 # SCREENSHOTS
 ################################################################################
 
-bindsym Print exec scrot 'capture-%Y-%m-%d-%s_$wx$h.bmp' -e 'mv $f ~/shots'
-
-################################################################################
-# BAR
-################################################################################
-
-# TODO: install tray icons - am having problems getting nm-applet to work, seems
-# to fail to find the required icons event though they are installed in 
-#   /usr/share/icons
-
-#exec_always --no-startup-id "~/config/i3/tray.sh"
-# exec --no-startup-id nm-applet --sm-disable
-
-bar {
-  #status_command i3status -c ~/.config/i3status/config
-  status_command i3status
-
-  # bottom | top
-  position bottom
-
-  # font used for status line
-  font pango:JetBrains Mono Bold 10
-
-  # separator for status line items
-  separator_symbol " - "
-
-  # the 'primary' option requires you to setup a primary display
-  # with the X server like:
-  #   $ xrandr --output <output> --primary
-  # else the tray icons will not appear.
-  tray_output primary
-
-  # show all workspaces on bar as clickable button
-  workspace_buttons yes
-
-  # remove numbers from the workspace names
-  strip_workspace_numbers yes
-
-  # padding between upper, lower and right-hand side
-  # if tray and between icons
-  tray_padding 2
-
-  colors {
-    background $SHADE0
-
-    # default text color for status line
-    statusline $WHITE0
-
-    # color of separator between statusline modules
-    separator $SHADE1
-
-    #                  border  backgr. text
-    focused_workspace  $COLHL0 $COLHL0 $BLACK0
-    active_workspace   $COLHL1 $COLHL1 $BLACK0
-    inactive_workspace $SHADE0 $SHADE0 $WHITE0
-    urgent_workspace   $SHADE0 $SHADE0 $WHITE0
-  }
-}
+bindsym Print exec scrot 'capture-%Y-%m-%d-%s_$wx$h.bmp' -e 'mv $f ~/Screenshots'
 
 ################################################################################
 # MISCELLANEOUS
@@ -354,7 +343,7 @@ bar {
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # Use pactl to adjust volume in PulseAudio.
 # set $refresh_i3status killall -SIGUSR1 i3status
