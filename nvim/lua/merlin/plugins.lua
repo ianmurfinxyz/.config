@@ -66,12 +66,19 @@ return packer.startup(function(use)
 	use 'hrsh7th/cmp-cmdline'
 	use 'saadparwaiz1/cmp_luasnip'
 
+	-- Treesitter
+	use 'nvim-treesitter/nvim-treesitter'
+
+	-- Git integration
+	use 'tpope/vim-fugitive'
+
 	-- Completion engine requires a snippets engine
 	use 'L3MON4D3/LuaSnip'
 	use 'rafamadriz/friendly-snippets'
 
-	-- TokyoNight color scheme
+	-- Color schemes
 	use 'folke/tokyonight.nvim'
+	use 'Mofiqul/dracula.nvim'
 
 	-- LSP
 	-- Collection of community-driven language server configurations for
@@ -81,6 +88,17 @@ return packer.startup(function(use)
 
 	-- Simple to use language server installer. Works with nvim-lspconfig.
 	use 'williamboman/nvim-lsp-installer'
+
+	-- Debug Adaptor for lua.
+	-- see :help osv
+	use 'jbyuki/one-small-step-for-vimkind'
+
+	-- Debug Client for nvim debugging.
+	-- see :help dap-configuration
+	use 'mfussenegger/nvim-dap'
+
+	-- ui front-end to nvim dap.
+	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

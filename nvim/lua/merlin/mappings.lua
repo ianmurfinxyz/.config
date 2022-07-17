@@ -3,8 +3,7 @@
 -- author - Ian Murfin - github.com/ianmurfinxyz
 --------------------------------------------------------------------------------
 
-mu = require("maputil")
-
+local mu = require "maputil"
 local opts = {silent = true}
 
 -- leader prefix used for custom commands
