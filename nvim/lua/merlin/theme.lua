@@ -4,12 +4,14 @@
 --------------------------------------------------------------------------------
 
 local colorscheme = 'tokyonight'
---local colorscheme = 'onedark'
 
 -- note: tokyonight options must be set before setting the colorscheme.
 
 vim.g.tokyonight_style = "night"
 
+-- All colors in the colorscheme can be overriden. To see which colors
+-- can be set see the file: 
+-- ~/.local/share/nvim/site/pack/packer/start/tokyonight.nvim/lua/tokyonight
 vim.g.tokyonight_colors = {
 	none = "NONE",
 	bg_dark = "#1f2335",
@@ -54,4 +56,10 @@ end
 -- disable background color (use the terminals instead to allow opacity).
 -- note: must run this after setting the colorscheme to override the schemes 
 -- background setting.
-vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
+vim.cmd('hi Normal guibg=NONE')
+
+-- color of the split border
+vim.cmd('hi VertSplit guibg=NONE guifg=#9ece6a')
+
+-- color of the color column.
+vim.cmd('hi ColorColumn guibg=#a9b1d6 guifg=#a9b1d6')

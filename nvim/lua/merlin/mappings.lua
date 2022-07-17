@@ -19,26 +19,30 @@ mu.nnoremap('<S-k>', '10k', opts)
 mu.nnoremap('<S-l>', '10l', opts)
 
 -- faster scrolling/movement commands
-mu.nnoremap('<S-A-h>', '5h', opt)
-mu.nnoremap('<S-A-j>', '5j', opt)
-mu.nnoremap('<S-A-k>', '5k', opt)
-mu.nnoremap('<S-A-l>', '5l', opt)
+mu.nnoremap('<S-A-h>', '5h', opts)
+mu.nnoremap('<S-A-j>', '5j', opts)
+mu.nnoremap('<S-A-k>', '5k', opts)
+mu.nnoremap('<S-A-l>', '5l', opts)
+
+-- easier split creation
+mu.nnoremap('<leader>s', ':split<CR>', opts)
+mu.nnoremap('<leader>v', ':vsplit<CR>', opts)
 
 -- easier window navigation
-mu.nnoremap('<C-h>', '<c-w>h', opts)
-mu.nnoremap('<C-j>', '<c-w>j', opts)
-mu.nnoremap('<C-k>', '<c-w>k', opts)
-mu.nnoremap('<C-l>', '<c-w>l', opts)
+mu.nnoremap('<c-h>', '<c-w>h', opts)
+mu.nnoremap('<c-j>', '<c-w>j', opts)
+mu.nnoremap('<c-k>', '<c-w>k', opts)
+mu.nnoremap('<c-l>', '<c-w>l', opts)
 
 -- easier window resizing
 mu.nnoremap('<C-Up>', ':resize +2<CR>', opts)
 mu.nnoremap('<C-Down>', ':resize -2<CR>', opts)
-mu.nnoremap('<C-Left>', ':vertical resize +2<CR>', opts)
 mu.nnoremap('<C-Right>', ':vertical resize -2<CR>', opts)
+mu.nnoremap('<C-Left>', ':vertical resize +2<CR>', opts)
 
 -- easier buffer navigation
-mu.nnoremap('<=>', ':bnext<CR>', opts)
-mu.nnoremap('<_>', ':bprevious<CR>', opts)
+mu.nnoremap('+', ':bnext<CR>', opts)
+mu.nnoremap('_', ':bprevious<CR>', opts)
 
 -- Visual Line --
 -- Move text up and down

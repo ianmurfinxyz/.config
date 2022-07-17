@@ -3,7 +3,7 @@ return {
 		Lua = {
 			diagnostics = {
 				-- Get the language server to recognise the global nvim.
-				globals = {"vim"},
+				globals = {"vim", "love"},
 			},
 			workspace = {
 				-- Make the server aware of Neovim runtime files.
