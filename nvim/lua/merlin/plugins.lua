@@ -100,6 +100,10 @@ return packer.startup(function(use)
 	-- ui front-end to nvim dap.
 	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 
+	-- tree viewer panel
+	-- see :help nvim-tree
+	use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons'} }
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

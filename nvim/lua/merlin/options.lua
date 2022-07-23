@@ -13,6 +13,9 @@ vim.opt.shiftwidth = 2
 vim.opt.smarttab = true
 vim.opt.smartindent = true
 
+-- disable enforement of pep8 style for python files; used to allow tabs
+vim.g.python_recommended_style = 0
+
 -- rendering
 vim.opt.cursorline = true
 vim.opt.colorcolumn = "81"

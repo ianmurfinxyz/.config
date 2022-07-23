@@ -23,4 +23,8 @@ lspconfig.sumneko_lua.setup(sumneko_opts);
 local clangd_opts = vim.tbl_deep_extend('force', opts, require('merlin.lsp.settings.clangd'))
 lspconfig.clangd.setup(clangd_opts);
 
+local pyright_opts = vim.tbl_deep_extend('force', opts, require('merlin.lsp.settings.pyright'))
+lspconfig.pyright.setup(pyright_opts);
+
+
 
