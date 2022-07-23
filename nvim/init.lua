@@ -8,8 +8,8 @@
 -- relative paths.
 local cfg = '/home/merlin/.config/nvim/'
 package.path = string.format(
-	"?;?.lua;%s/?.lua;%s/lua/?.lua;%s/lua/merlin/?.lua;%s/lua/util/?.lua;",
-	cfg, cfg, cfg, cfg
+	"?;?.lua;%s/?.lua;%s/lua/?.lua;",
+	cfg, cfg
 )
 
 require("merlin.options")

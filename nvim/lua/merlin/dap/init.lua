@@ -3,7 +3,7 @@
 -- author - Ian Murfin - github.com/ianmurfinxyz
 --------------------------------------------------------------------------------
 
-local mu = require 'maputil'
+local mu = require 'util.maputil'
 
 local opts = { silent = true }
 
