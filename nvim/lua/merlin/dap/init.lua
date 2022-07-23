@@ -22,6 +22,13 @@ mu.nnoremap("<leader>b", "<cmd>lua require('dap').toggle_breakpoint()<CR>", opts
 -- setup dap-adaptor for lua.
 require 'merlin.dap.adaptors.lua-adaptor'
 
+-- setup dap-adaptor for python.
+-- note: this requires installing debugpy. It is recommended to install 
+-- debugpy into it's own venv (nvim will run it from that venv) like,
+--		python -m venv path/to/virtualenvs/debugpy
+--		path/to/virtualenvs/debugpy -m pip install debugpy
+require 'merlin.dap.adaptors.python-adaptor'.setup()
+
 -- setup the dap-ui
 require('dapui').setup()
 

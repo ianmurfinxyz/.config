@@ -80,7 +80,14 @@ return packer.startup(function(use)
 	use 'folke/tokyonight.nvim'
 	use 'Mofiqul/dracula.nvim'
 
+	-- tree viewer panel
+	-- see :help nvim-tree
+	use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons'} }
+
+	------------------------------------------------------------------------------
 	-- LSP
+	------------------------------------------------------------------------------
+
 	-- Collection of community-driven language server configurations for
 	-- the language server client built into neovim. Not required to use
 	-- lsp in neovim but makes it easier. See help lspconfig. see help: lsp
@@ -89,9 +96,18 @@ return packer.startup(function(use)
 	-- Simple to use language server installer. Works with nvim-lspconfig.
 	use 'williamboman/nvim-lsp-installer'
 
+	------------------------------------------------------------------------------
+	-- DAP
+	------------------------------------------------------------------------------
+
 	-- Debug Adaptor for lua.
 	-- see :help osv
 	use 'jbyuki/one-small-step-for-vimkind'
+
+	-- Provides default configurations for nvim-dap python and methods
+	-- to debug individual test methods and classes. Not required to support
+	-- dap with python but makes things easier to configure.
+	use 'mfussenegger/nvim-dap-python'
 
 	-- Debug Client for nvim debugging.
 	-- see :help dap-configuration
@@ -100,9 +116,7 @@ return packer.startup(function(use)
 	-- ui front-end to nvim dap.
 	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 
-	-- tree viewer panel
-	-- see :help nvim-tree
-	use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons'} }
+	------------------------------------------------------------------------------
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
