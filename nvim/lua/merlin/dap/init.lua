@@ -11,7 +11,7 @@ local opts = { silent = true }
 -- see :help dap.txt
 -- see :help dap-mappings
 -- see :help osv-server
---mu.nnoremap("<F6>", "<cmd>lua require('osv').stop(1)<CR>", opts)
+mu.nnoremap("<F6>", "<cmd>lua require('osv').stop()<CR>", opts)
 mu.nnoremap("<F7>", "<cmd>lua require('osv').run_this()<CR>", opts)
 mu.nnoremap("<F8>", "<cmd>lua require('dap').continue()<CR>", opts)
 mu.nnoremap("<F9>", "<cmd>lua require('dap').step_out()<CR>", opts)

@@ -26,5 +26,8 @@ lspconfig.clangd.setup(clangd_opts);
 local pyright_opts = vim.tbl_deep_extend('force', opts, require('merlin.lsp.settings.pyright'))
 lspconfig.pyright.setup(pyright_opts);
 
+local rust_opts = vim.tbl_deep_extend('force', opts, require('merlin.lsp.settings.rust_analyzer'))
+lspconfig.rust_analyzer.setup(rust_opts)
+
 
 

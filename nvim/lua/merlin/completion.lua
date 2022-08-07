@@ -75,7 +75,7 @@ local mappings = {}
 mappings['<C-k>'] = cmp.mapping.select_prev_item()
 mappings['<C-j>'] = cmp.mapping.select_next_item()
 mappings['<Tab>'] = cmp.mapping.confirm({select=true})
-mappings['<Esc>'] = cmp.mapping.abort()
+--mappings['<Esc>'] = cmp.mapping.abort()
 cfg['mapping'] = cmp.mapping.preset.insert(mappings)
 
 -- Controls formatting of completion popups.
