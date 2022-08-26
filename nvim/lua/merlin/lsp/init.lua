@@ -14,10 +14,32 @@ end
 require('merlin.lsp.server_installer')
 
 -- Setup cosmetic stuff like virtual text and signs
-require('merlin.lsp.cosmetics')
+require('merlin.lsp.style')
+
+-- Setup border for lsp floating windows
+-- https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization
+--vim.cmd [[autocmd! ColorScheme * highlight NormalFloat guibg=#1f2335]]
+--vim.cmd [[autocmd! ColorScheme * highlight FloatBorder guifg=white guibg=#1f2335]]
+
+local border = {
+	{"╭", "FloatBorder"},
+	{"─", "FloatBorder"},
+	{"╮", "FloatBorder"},
+	{"│", "FloatBorder"},
+	{"╯", "FloatBorder"},
+	{"─", "FloatBorder"},
+	{"╰", "FloatBorder"},
+	{"│", "FloatBorder"},
+}
+
+local handlers =  {
+  ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = border}),
+  ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = border }),
+}
 
 local opts = {
-	on_attach = require('merlin.lsp.key_maps').on_attach
+	on_attach = require('merlin.lsp.key_maps').on_attach,
+	handlers = handlers
 }
 
 local sumneko_opts = vim.tbl_deep_extend('force', opts, require('merlin.lsp.settings.sumneko_lua'))
