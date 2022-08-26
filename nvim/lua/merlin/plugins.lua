@@ -66,6 +66,9 @@ return packer.startup(function(use)
 	use 'hrsh7th/cmp-cmdline'
 	use 'saadparwaiz1/cmp_luasnip'
 
+	-- git
+	use 'lewis6991/gitsigns.nvim'
+
 	-- Treesitter
 	use 'nvim-treesitter/nvim-treesitter'
 
