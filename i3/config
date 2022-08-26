@@ -215,6 +215,9 @@ bindsym $mod+Shift+v exec ristretto
 # start image file manager
 bindsym $mod+Shift+f exec thunar
 
+# start snipping tool
+bindsym $mod+Shift+s exec shutter
+
 # start IDE
 #bindsym $mod+Shift+c exec clion
 
