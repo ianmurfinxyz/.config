@@ -14,7 +14,7 @@ end
 require('merlin.lsp.server_installer')
 
 local opts = {
-	on_attach = require('merlin.lsp.handlers').on_attach
+	on_attach = require('merlin.lsp.key_maps').on_attach
 }
 
 local sumneko_opts = vim.tbl_deep_extend('force', opts, require('merlin.lsp.settings.sumneko_lua'))

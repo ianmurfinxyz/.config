@@ -22,13 +22,13 @@ lsp_installer.setup({
 	-- need to install ghcup from https://www.haskell.org/ghcup/.
 	--
 	ensure_installed = {
-		rust_analyzer,  -- rust
-		hls,            -- haskell
-		clangd,         -- c/c++
-		omnisharp,      -- c#
-		bashls,         -- bash
-		marksman,       -- markdown
-		sumneko_lua,    -- lua
+		"rust_analyzer",  -- rust
+		"hls",            -- haskell
+		"clangd",         -- c/c++
+		"omnisharp",      -- c#
+		"bashls",         -- bash
+		"marksman",       -- markdown
+		"sumneko_lua",    -- lua
 	},
 
 	-- Whether servers that are set up (via lspconfig) should be automatically 
@@ -42,7 +42,7 @@ lsp_installer.setup({
 	--	- { exclude: string[] }: All servers set up via lspconfig, except the 
 	--	  ones provided in the list, are automatically installed.
 	--		 Example: automatic_installation = { exclude = { "rust_analyzer", "solargraph" } }
-	automatic_installation = true, 
+	automatic_installation = true,
 
 	ui = {
 		-- Whether to automatically check for outdated servers when opening the UI window.

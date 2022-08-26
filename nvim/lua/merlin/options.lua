@@ -40,7 +40,7 @@ vim.g.rust_recommended_style = 0
 
 -- rendering
 vim.opt.cursorline = true
-vim.opt.colorcolumn = "81"
+vim.opt.colorcolumn = "101"
 vim.opt.wrap = false
 vim.opt.textwidth = 0
 vim.opt.showmode = true

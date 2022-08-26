@@ -7,9 +7,9 @@ local mu = require "util.maputil"
 local opts = {silent = true}
 
 -- leader prefix used for custom commands
-vim.api.nvim_set_keymap("", "<Space>", "<Nop>", opts)
-vim.g.maplocalleader = ' '
-vim.g.mapleader = ' '
+vim.api.nvim_set_keymap("", "`", "<Nop>", opts)
+vim.g.maplocalleader = '`'
+vim.g.mapleader = '`'
 
 -- faster scrolling/movement commands
 mu.nnoremap('<S-h>', '10h', opts)

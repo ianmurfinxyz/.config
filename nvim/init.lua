@@ -13,7 +13,7 @@ package.path = string.format(
 )
 
 require("merlin.options")
-require("merlin.mappings")
+require("merlin.key_maps")
 require("merlin.plugins")
 require("merlin.theme")
 require("merlin.completion")
