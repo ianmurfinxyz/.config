@@ -13,6 +13,9 @@ end
 -- so that the installer can setup the server hooks.
 require('merlin.lsp.server_installer')
 
+-- Setup cosmetic stuff like virtual text and signs
+require('merlin.lsp.cosmetics')
+
 local opts = {
 	on_attach = require('merlin.lsp.key_maps').on_attach
 }
@@ -28,6 +31,4 @@ lspconfig.pyright.setup(pyright_opts);
 
 local rust_opts = vim.tbl_deep_extend('force', opts, require('merlin.lsp.settings.rust_analyzer'))
 lspconfig.rust_analyzer.setup(rust_opts)
-
-
 

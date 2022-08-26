@@ -1,0 +1,23 @@
+local function setup_lsp_signs()
+	local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+	for type, icon in pairs(signs) do
+	  local hl = "DiagnosticSign" .. type
+	  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl, linehl='' })
+	end
+end
+
+local function setup_virtual_text()
+	vim.diagnostic.config({
+	  virtual_text = {
+	    -- source = "always",  -- Or "if_many"
+	    prefix = '●', -- Could be '■', '▎', 'x'
+	  },
+	  severity_sort = true,
+	  float = {
+	    source = "always",  -- Or "if_many"
+	  },
+	})
+end
+
+setup_lsp_signs()
+setup_virtual_text()
