@@ -44,7 +44,7 @@ packer.init {
 	}
 }
 
---------------------------------------------------------------------------------
+--============================================================================--
 -- PLUGIN INSTALLATION
 --------------------------------------------------------------------------------
 return packer.startup(function(use)
@@ -68,6 +68,13 @@ return packer.startup(function(use)
 
 	-- Treesitter
 	use 'nvim-treesitter/nvim-treesitter'
+
+	-- Telescope
+	use {
+	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+	-- or                            , branch = '0.1.x',
+	  requires = {{'nvim-lua/plenary.nvim'}}
+	}
 
 	-- Git integration
 	use 'tpope/vim-fugitive'
