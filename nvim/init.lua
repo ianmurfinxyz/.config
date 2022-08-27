@@ -23,3 +23,7 @@ require("merlin.treesitter")
 require("merlin.nvim-tree")
 require("merlin.telescope")
 require("merlin.git_signs")
+
+-- useful globals utiltiies for when writing plugins 
+require('devel.globals')
+require('devel.key_maps')
